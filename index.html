@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>XUI-PRO Control Panel</title><link rel="stylesheet" href="/panel/assets/panel.css"></head>
+<body>
+<div id="app"><aside class="sidebar"><div class="brand"><span class="logo">X</span><div><b>XUI-PRO</b><small>Control Panel</small></div></div>
+<nav><a class="nav active" href="#dashboard" data-page="dashboard">📊 <span>Dashboard</span></a>
+<a class="nav" href="#inbounds" data-page="inbounds">🔗 <span>Inbounds</span></a>
+<a class="nav" href="#clients" data-page="clients">👥 <span>Clients</span></a>
+<a class="nav" href="#tools" data-page="tools">🔥 <span>Useful Tools</span></a>
+<a class="nav" href="#settings" data-page="settings">⚙️ <span>Panel Settings</span></a></nav>
+<div class="sidebar-bottom"><button id="logout" class="ghost">↪ Logout</button></div></aside>
+<main><header><div><button id="menu" class="mobile-menu">☰</button><h1 id="pageTitle">Dashboard</h1><p id="pageSub">Server overview and live status</p></div><div class="top-actions"><span id="status" class="status"><i></i> Checking…</span><button id="refresh" class="iconbtn">↻</button></div></header>
+<section id="content"></section></main></div>
+<div id="toast"></div><script src="/panel/assets/panel.js"></script></body></html>
