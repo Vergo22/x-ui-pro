@@ -1,16 +1,28 @@
 # XUI-PRO Custom Panel
 
-This is the custom management UI for the existing XUI-PRO installation.
+This is the custom management UI for the existing XUI-PRO/X-UI backend.
 
-It does not replace XUI/Xray, Nginx, the database, subscriptions, WARP, v2rayA, or the installer. It uses the authenticated X-UI API from the same origin.
+## Install
 
-## Pages
-- Login
-- Dashboard
-- Inbounds
-- Clients
-- Useful Tools
-- Panel Settings
+After XUI-PRO has been installed, run:
 
-## Deployment
-Use `install-panel.sh` on the XUI-PRO server. It detects the existing X-UI port and web base path and creates an Nginx `/panel/` route.
+```bash
+sudo bash /path/to/panel/install-panel.sh
+```
+
+The installer:
+
+- reads the existing X-UI port/base path from `/etc/x-ui/x-ui.db`;
+- keeps the existing XUI authentication/session;
+- serves the custom UI at `/panel/`;
+- proxies `/panel/login`, `/panel/logout`, and `/panel/api/*` to the existing XUI backend;
+- adds the Nginx locations inside the existing XUI-PRO `server {}` block;
+- validates and reloads Nginx.
+
+No XUI credentials are stored in this repository.
+
+## URL
+
+After installation:
+
+`https://YOUR-DOMAIN/panel/`
